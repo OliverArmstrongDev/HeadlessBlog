@@ -7,10 +7,10 @@ export default function Layout({ children }) {
         <Link href="/">
           <a>
             <h1>
-              <span>Just Add</span>
-              <span>Marmite</span>
+              <span>Welcome to...</span>
+              <span>NerdPress</span>
             </h1>
-            <h2>Spread The Joy</h2>
+            <h2>A blog platform for Nerds!</h2>
           </a>
         </Link>
       </header>
@@ -20,7 +20,7 @@ export default function Layout({ children }) {
       </div>
 
       <footer>
-        <p>Copyright 2021 Just Add Marmite :)</p>
+        <p><a href='https://oliverarmstrongdev.com'>Copyright © 2022 Oliver Armstrong.</a></p>
       </footer>
     </div>
   )
