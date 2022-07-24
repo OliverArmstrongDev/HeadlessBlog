@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Image from 'next/image'
+import Skeleton from "../../components/Skeleton";
 
 
   const client = createClient({
@@ -21,7 +22,7 @@ console.log('res', res);
 
   return{
     paths,
-    fallback: false
+    fallback: true
 
   }
 }
@@ -40,7 +41,12 @@ export const getStaticProps = async ({params}) =>
 }
 
 export default function BlogPostDetails({post}) {
-  const { title, content, description, featuredImage} = post.fields;
+
+  //if content loading in background display this...
+  if(!post) return <Skeleton />
+
+  // else display normal JSX
+  const { title, content, featuredImage} = post.fields;
   console.log('post', post);
   
   return (
