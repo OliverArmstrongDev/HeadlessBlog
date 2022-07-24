@@ -27,13 +27,18 @@ console.log('res', res);
   }
 }
 
-export const getStaticProps = async ({params}) =>
-{
+export const getStaticProps = async ({params}) =>{
     const { items } = await client.getEntries({
       content_type: 'blogPosts',
       'fields.slug': params.slug
     })
-
+    //if the slug is not found then redirect to home
+    if(!items.length) return {
+      redirect: {
+        destination : '/',
+        permanent: false
+      }
+    }
     return {
       props: { post: items[0]},
       revalidate: 5
