@@ -26,7 +26,7 @@ export default function BlogPostCardList({post}) {
 
         <style jsx>{`
         .card {
-            transform: rotateZ(-3deg);
+            transform: rotateZ(-1deg);
         }
     
         .content{
