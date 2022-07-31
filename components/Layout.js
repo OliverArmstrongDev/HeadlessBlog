@@ -4,15 +4,17 @@ export default function Layout({ children }) {
   return (
     <div className="layout">
       <header>
-        <Link href="/">
           <a>
             <h1>
               <span>Welcome to...</span>
-              <span>NerdPress</span>
+              <span>Headless Blog</span>
             </h1>
-            <h2>A blog platform for Nerds!</h2>
+            <h2>A mock blog platform built using Next.js and a Headless CMS</h2>
+            <div className="subcontent">
+            <p className='blurb'>Any changes made in the backend (Contentful) are updated in the front end automatically using ISR (incremental Static Regeneration). It also has an auto redirect after 3 seconds for a 404 not found page.</p>
+            </div>
           </a>
-        </Link>
+       
       </header>
 
       <div className="page-content">
